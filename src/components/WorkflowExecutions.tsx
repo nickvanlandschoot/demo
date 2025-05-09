@@ -5,7 +5,8 @@ import {
   partners, 
   marketingCampaigns, 
   targetAccounts, 
-  dealProgressData 
+  dealProgressData,
+  backOfficeWorkflows
 } from '../data/mockData';
 
 // AWS Tagging Workflow Execution
@@ -880,6 +881,42 @@ export const QuickWinsExecution = ({ onComplete }: { onComplete: () => void }) =
           </button>
         </div>
       )}
+    </div>
+  );
+};
+
+// Back Office Workflow Execution
+export const BackOfficeWorkflowExecution = () => {
+  return (
+    <div className="space-y-8">
+      <h2 className="text-2xl font-bold mb-4">Back Office Workflows</h2>
+      <div className="grid md:grid-cols-2 gap-6">
+        {backOfficeWorkflows.map((item, idx) => (
+          <div key={idx} className="bg-gray-900 border border-gray-700 rounded-xl p-5 shadow-lg">
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="text-lg font-semibold">{item.name}</h3>
+              <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                item.status === 'In Progress' ? 'bg-blue-800 text-blue-200' :
+                item.status === 'Automated' ? 'bg-green-800 text-green-200' :
+                item.status === 'Needs Review' ? 'bg-yellow-800 text-yellow-200' :
+                item.status === 'Stable' ? 'bg-green-900 text-green-300' :
+                item.status === 'Updating' ? 'bg-purple-800 text-purple-200' :
+                item.status === 'Active' ? 'bg-blue-900 text-blue-300' :
+                item.status === 'Integrating' ? 'bg-indigo-800 text-indigo-200' :
+                item.status === 'Planned' ? 'bg-gray-800 text-gray-300' :
+                item.status === 'Expanding' ? 'bg-pink-800 text-pink-200' :
+                item.status === 'Ongoing' ? 'bg-cyan-800 text-cyan-200' :
+                item.status === 'Secure' ? 'bg-green-800 text-green-200' :
+                'bg-gray-700 text-gray-200'
+              }`}>
+                {item.status}
+              </span>
+            </div>
+            <div className="text-gray-300 mb-2">{item.description}</div>
+            <div className="text-gray-400 text-sm">{item.details}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

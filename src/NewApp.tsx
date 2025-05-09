@@ -3,7 +3,8 @@ import './App.css'
 import { 
   AwsTaggingExecution, 
   PartnerRetentionExecution, 
-  QuickWinsExecution 
+  QuickWinsExecution,
+  BackOfficeWorkflowExecution
 } from './components/WorkflowExecutions';
 import { DealMonitoringExecution } from './components/DealMonitoringExecution';
 import { ACERegistrationExecution } from './components/ACERegistrationExecution';
@@ -88,7 +89,15 @@ const workflows = [
     description: 'Identify target accounts for quick wins with new partnerships',
     personas: ['partner-manager'],
     prompt: 'Find quick win opportunities for my new partnership'
-  }
+  },
+  { 
+    id: 'back-office', 
+    name: 'Back Office Workflows', 
+    category: 'gsi-cosell',
+    description: 'Monitor and improve back office processes such as budget, payroll, AP/AR, and automation.',
+    personas: ['partner-manager', 'partner-leader', 'account-manager', 'sales-leadership'],
+    prompt: 'Show me the status of my back office workflows'
+  },
 ];
 
 function App() {
@@ -256,8 +265,12 @@ function App() {
             <CoMarketingExecution onComplete={resetDemo} />
           )}
           
+          {workflow?.id === 'back-office' && (
+            <BackOfficeWorkflowExecution />
+          )}
+          
           {/* Fallback for workflows without specific implementations */}
-          {!['aws-tagging', 'partner-retention', 'quick-wins', 'deal-monitoring', 'ace-registration-pm', 'comarketing'].includes(workflow?.id || '') && (
+          {!['aws-tagging', 'partner-retention', 'quick-wins', 'deal-monitoring', 'ace-registration-pm', 'comarketing', 'back-office'].includes(workflow?.id || '') && (
             <div className="text-center py-8">
               <p className="text-gray-400 mb-4">This workflow is not fully implemented in the demo.</p>
               <button

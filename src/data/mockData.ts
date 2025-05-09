@@ -547,3 +547,79 @@ export const dealProgressData = [
     ]
   }
 ];
+
+// Mock Back Office Workflow Data
+export const backOfficeWorkflows = [
+  {
+    name: 'Budget',
+    description: 'Annual and quarterly budget planning, tracking, and variance analysis.',
+    status: 'In Progress',
+    details: '2024 budget cycle underway. Reviewing department submissions and aligning with strategic goals.'
+  },
+  {
+    name: 'Accounts Payable',
+    description: 'Processing and payment of vendor invoices, expense management, and reconciliation.',
+    status: 'Automated',
+    details: 'Oracle on-prem integration in place. Most invoices processed automatically.'
+  },
+  {
+    name: 'Accounts Receivable',
+    description: 'Customer invoicing, collections, and cash application.',
+    status: 'Needs Review',
+    details: 'Aging report shows 5% overdue. Exploring automation for reminders.'
+  },
+  {
+    name: 'Payroll',
+    description: 'Employee payroll processing, tax withholdings, and direct deposit.',
+    status: 'Stable',
+    details: 'All payrolls processed on time. Reviewing new entitlements for next cycle.'
+  },
+  {
+    name: 'Entitlements',
+    description: 'Management of employee benefits, leave, and statutory entitlements.',
+    status: 'Updating',
+    details: 'Policy updates in progress for 2024. Integrating with payroll.'
+  },
+  {
+    name: 'Dashboards (PowerBI)',
+    description: 'Business intelligence dashboards for finance and operations.',
+    status: 'Active',
+    details: 'PowerBI dashboards refreshed daily. Orbit Analytics integration planned.'
+  },
+  {
+    name: 'Oracle On-Prem Software',
+    description: 'Legacy ERP and financials running on-premises.',
+    status: 'Integrating',
+    details: 'Orbit Analytics integration in progress. Exploring cloud migration.'
+  },
+  {
+    name: 'Orbit Analytics',
+    description: 'Reporting and analytics platform for Oracle data.',
+    status: 'Planned',
+    details: 'Integration with Oracle on-prem and PowerBI scheduled for Q3.'
+  },
+  {
+    name: 'Agents & Automation',
+    description: 'RPA and agent-based automation for repetitive back office workflows.',
+    status: 'Expanding',
+    details: 'Adding more agents to reduce manual work. Reviewing workflow accuracy.'
+  },
+  {
+    name: 'Back Office Workflow Improvement',
+    description: 'Continuous improvement of finance and admin workflows.',
+    status: 'Ongoing',
+    details: 'Identifying and removing repetitive workflows. Focusing on accuracy and efficiency.'
+  },
+  {
+    name: 'On-Premise Software',
+    description: 'Management and monitoring of all on-premise business applications.',
+    status: 'Stable',
+    details: 'Regular patching and monitoring in place. Reviewing VPC security.'
+  },
+  {
+    name: 'VPC (Virtual Private Cloud)',
+    description: 'Network isolation and security for on-prem and cloud workloads.',
+    status: 'Secure',
+    details: 'VPC configurations reviewed quarterly. No issues detected.'
+  }
+];
